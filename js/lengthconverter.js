@@ -1,34 +1,71 @@
-window.onload = function()
-{
+window.onload = function() {
     let mi = document.getElementById("mm");
     let ce = document.getElementById("cm");
     let de = document.getElementById("dm");
     let met = document.getElementById("me");
     let ki = document.getElementById("km");
     
-    mi.oninput = function(){
-        ce.value = mi.value / 10;
-        de.value = mi.value / 100;
-        met.value = mi.value / 1000;
-        ki.value = mi.value / 1000000;};
-    ce.oninput = function(){
-        mi.value = ce.value * 10;
-        de.value = ce.value / 10;
-        met.value = ce.value / 100;
-        ki.value = ce.value / 100000;};
-    de.oninput = function(){
-        ce.value = de.value * 10;
-        mi.value = de.value * 100;
-        met.value = de.value / 10;
-        ki.value = de.value / 10000;};
-    met.oninput = function(){
-        ce.value = met.value * 100;
-        de.value = met.value * 10;
-        mi.value = met.value * 1000;
-        ki.value = met.value / 1000;};
-    ki.oninput = function(){
-        ce.value = ki.value * 10000;
-        de.value = ki.value * 100000;
-        met.value = ki.value * 1000;
-        mi.value = ki.value * 1000000;};
+    function isEmpty(val) {
+        return val === '' || val === null || isNaN(val);
+    }
+    
+    mi.oninput = function() {
+        if (isEmpty(mi.value)) {
+            ce.value = de.value = met.value = ki.value = '';
+            return;
+        }
+        let v = parseFloat(mi.value);
+        ce.value = v / 10;
+        de.value = v / 100;
+        met.value = v / 1000;
+        ki.value = v / 1000000;
+    };
+    
+    ce.oninput = function() {
+        if (isEmpty(ce.value)) {
+            mi.value = de.value = met.value = ki.value = '';
+            return;
+        }
+        let v = parseFloat(ce.value);
+        mi.value = v * 10;
+        de.value = v / 10;
+        met.value = v / 100;
+        ki.value = v / 100000;
+    };
+    
+    de.oninput = function() {
+        if (isEmpty(de.value)) {
+            mi.value = ce.value = met.value = ki.value = '';
+            return;
+        }
+        let v = parseFloat(de.value);
+        ce.value = v * 10;
+        mi.value = v * 100;
+        met.value = v / 10;
+        ki.value = v / 10000;
+    };
+    
+    met.oninput = function() {
+        if (isEmpty(met.value)) {
+            mi.value = ce.value = de.value = ki.value = '';
+            return;
+        }
+        let v = parseFloat(met.value);
+        ce.value = v * 100;
+        de.value = v * 10;
+        mi.value = v * 1000;
+        ki.value = v / 1000;
+    };
+    
+    ki.oninput = function() {
+        if (isEmpty(ki.value)) {
+            mi.value = ce.value = de.value = met.value = '';
+            return;
+        }
+        let v = parseFloat(ki.value);
+        ce.value = v * 10000;
+        de.value = v * 100000;
+        met.value = v * 1000;
+        mi.value = v * 1000000;
+    };
 };

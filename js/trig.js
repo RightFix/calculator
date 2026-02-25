@@ -26,6 +26,7 @@ window.onload = function() {
         if (btn) {
             btn.onclick = function() {
                 if (display.value === 'Error') display.value = '';
+                if (value === '.' && display.value.includes('.')) return;
                 display.value += value;
             };
         }
@@ -109,10 +110,10 @@ window.onload = function() {
 
     document.addEventListener('keydown', function(e) {
         const key = e.key;
-        if (key >= '0' && key <= '9' || key === '.' || key === '(' || key === ')') {
+        if (key >= '0' && key <= '9' || key === '.' || key === '(' || key === ')' || key === '-') {
             if (display.value === 'Error') display.value = '';
             display.value += key;
-        } else if (key === '+' || key === '-' || key === '*' || key === '/') {
+        } else if (key === '+' || key === '*' || key === '/') {
             if (display.value === 'Error') display.value = '';
             display.value += key;
         } else if (key === 'Enter' || key === '=') {

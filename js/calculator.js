@@ -2,9 +2,10 @@ window.onload = function() {
     const display = document.forms.ans.result;
     
     function safeEval(expr) {
-        expr = expr.replace(/[^0-9+\-*/.()%^]/g, '');
+        expr = expr.replace(/[^0-9+\-*/.()]/g, '');
         try {
             if (expr === '' || expr === null) return '';
+            if (!/^[0-9+\-*/.()]+$/.test(expr)) return 'Error';
             const result = Function('"use strict";return (' + expr + ')')();
             if (!isFinite(result) || isNaN(result)) {
                 return 'Error';
@@ -16,7 +17,7 @@ window.onload = function() {
     }
 
     function factorial(n) {
-        n = Math.round(n);
+        if (!Number.isInteger(n)) return 'Error';
         if (n < 0) return 'Error';
         if (n > 170) return 'Error';
         if (n === 0 || n === 1) return 1;
@@ -39,6 +40,7 @@ window.onload = function() {
         if (btn) {
             btn.onclick = function() {
                 if (display.value === 'Error') display.value = '';
+                if (value === '.' && display.value.includes('.')) return;
                 display.value += value;
             };
         }
