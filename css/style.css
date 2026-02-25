@@ -1,0 +1,242 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+}
+
+nav {
+    text-align: left;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: inherit;
+}
+
+nav p {
+    cursor: pointer;
+}
+
+.temp, .time, .len {
+    padding-left: 20px;
+    font-size: 0.9rem;
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+input {
+    width: 100%;
+    height: 80px;
+    font-size: 2rem;
+    text-align: right;
+    border: 2px solid;
+    border-radius: 10px;
+    padding: 10px;
+    word-wrap: break-word;
+}
+
+table {
+    width: 100%;
+    max-width: 400px;
+    margin: 10px auto;
+    border-collapse: separate;
+    border-spacing: 8px;
+}
+
+td {
+    width: 25%;
+    height: 60px;
+    border: 2px solid;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    user-select: none;
+}
+
+td:active {
+    transform: scale(0.95);
+}
+
+button {
+    display: block;
+    margin: 20px auto;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 2px solid;
+}
+
+/**phone view**/
+@media (max-width: 750px) {
+    html {
+        font-size: 14px;
+    }
+    
+    body {
+        background-color: #1a1a1a;
+        color: white;
+        padding: 10px;
+    }
+    
+    nav {
+        color: #00d4ff;
+    }
+    
+    nav a {
+        color: #00d4ff;
+    }
+    
+    a {
+        color: #00d4ff;
+        text-decoration: none;
+    }
+    
+    table {
+        border-spacing: 5px;
+    }
+    
+    td {
+        background-color: #333;
+        border-color: #555;
+        color: white;
+        font-size: 1.8rem;
+    }
+    
+    td:hover {
+        background-color: #555;
+    }
+    
+    td.operator {
+        background-color: #ff9500;
+        color: black;
+    }
+    
+    td.operator:hover {
+        background-color: #ffaa33;
+    }
+    
+    td.equals {
+        background-color: #00d4ff;
+        color: black;
+    }
+    
+    td.equals:hover {
+        background-color: #33ddff;
+    }
+    
+    td.clear {
+        background-color: #ff3b30;
+        color: white;
+    }
+    
+    td.clear:hover {
+        background-color: #ff5b50;
+    }
+    
+    input {
+        background-color: #1a1a1a;
+        border-color: #555;
+        color: white;
+    }
+    
+    button {
+        background-color: #333;
+        border-color: #555;
+        color: white;
+    }
+}
+
+/**desktop view**/
+@media (min-width: 750px) {
+    html {
+        font-size: 16px;
+    }
+    
+    body {
+        background-color: #f5f5f5;
+        color: #333;
+        padding: 20px;
+    }
+    
+    nav {
+        color: #333;
+    }
+    
+    nav a {
+        color: #007bff;
+    }
+    
+    a {
+        color: #007bff;
+        text-decoration: none;
+    }
+    
+    td {
+        background-color: white;
+        border-color: #ddd;
+        font-size: 1.2rem;
+    }
+    
+    td:hover {
+        background-color: #e0e0e0;
+    }
+    
+    td.operator {
+        background-color: #ff9500;
+        color: white;
+    }
+    
+    td.operator:hover {
+        background-color: #ffaa33;
+    }
+    
+    td.equals {
+        background-color: #28a745;
+        color: white;
+    }
+    
+    td.equals:hover {
+        background-color: #34ce57;
+    }
+    
+    td.clear {
+        background-color: #dc3545;
+        color: white;
+    }
+    
+    td.clear:hover {
+        background-color: #e4606d;
+    }
+    
+    input {
+        background-color: white;
+        border-color: #ddd;
+        color: #333;
+    }
+    
+    button {
+        background-color: #007bff;
+        border-color: #0056b3;
+        color: white;
+    }
+    
+    button:hover {
+        background-color: #0056b3;
+    }
+}

@@ -1,0 +1,21 @@
+p {
+    text-size:32px;
+    text-align: center;
+    text-transform: uppercase;
+}
+body{
+    background-color: black;
+}
+form{
+    background-color:ash;
+    color: grey;
+}
+input{
+    border-radius:30px;
+}
+label:after{
+    content:":";
+}
+h1{
+    text-align:center;
+}
