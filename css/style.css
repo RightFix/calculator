@@ -57,7 +57,7 @@ table {
 }
 
 td {
-    width: 25%;
+    /* width: 25%; */
     height: 60px;
     border: 2px solid;
     border-radius: 10px;
@@ -231,7 +231,6 @@ button {
     }
     
     button {
-        background-color: #007bff;
         border-color: #0056b3;
         color: white;
     }

@@ -112,7 +112,7 @@ window.onload = function() {
         const key = e.key;
         if (key >= '0' && key <= '9' || key === '.' || key === '(' || key === ')' || key === '-') {
             if (display.value === 'Error') display.value = '';
-            display.value += key;
+            display.value += keyack;
         } else if (key === '+' || key === '*' || key === '/') {
             if (display.value === 'Error') display.value = '';
             display.value += key;
